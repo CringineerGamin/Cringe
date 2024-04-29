@@ -1,0 +1,450 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vkusny design</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('background2.png') center center fixed;
+            background-size: cover;
+            overflow-y: scroll;
+        }
+        header {
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        header a:hover {
+            background-color: #666;
+        }
+        .content {
+            padding: 0 10%;
+			min-height: 100vh;
+            text-align: center;
+        }
+        .main-content {
+            background-color: rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+		.block {
+			width: 18%;
+			margin: 1%;
+			background-color: #fff;
+			padding: 10px;
+			text-align: center;
+			border: 2px solid #000;
+			border-radius: 10px;
+			background-image: url('blockbackground.jpeg');
+			background-size: cover;
+			background-position: center;
+			color: white;
+		}
+		.block:hover{
+			box-shadow: 0 0 10px 5px rgba(21, 152, 52, 0.7);
+		}
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .enlarged {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Imperium Holy Vox Store</h1>
+        <a href="index.html">Imperium Holy Vox Store</a>
+        <a href="vkusno.html">Atoma Prime purging statistics</a>
+        <a href="povkusuvkusno.html">Operative Page</a>
+    </header>
+    <div class="content">
+        <div class="main-content">
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Accatran_mg_mk_ii_laspistol_icon.webp" alt="missing image">
+                <p>Accatran MG Mk II Heavy Laspistol</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Accatran_mk_ii_recon_icon.webp" alt="missing image">
+                <p>Accatran Mk II Recon Lasgun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Accatran_mk_vid_recon_icon.webp" alt="missing image">
+                <p>Accatran Mk VId Recon Lasgun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Accatran_mk_viia_recon_icon.webp" alt="missing image">
+                <p>Accatran Mk VIIa Recon Lasgun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Achlys_mk_vii_stubber_icon.webp" alt="missing image">
+                <p>Achlys Mk VII Twin-Linked Heavy Stubber</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Achlys_mk_viii_icon.webp" alt="missing image">
+                <p>Achlys Mk VIII Combat Axe</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Achlys_power_maul_icon.webp" alt="missing image">
+                <p>Achlys Mk I Power Maul</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Agripinaa_mk_i_infantry_icon.webp" alt="missing image">
+                <p>Agripinaa Mk I Infantry Autogun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Agripinaa_mk_ix_headhunter_icon.webp" alt="missing image">
+                <p>Agripinaa Mk IX Headhunter Autogun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Agripinaa_mk_vii_shotgun_icon.webp" alt="missing image">
+                <p>Agripinaa Mk VII Combat Shotgun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Agripinaa_mk_viii_braced_icon.webp" alt="missing image">
+                <p>Agripinaa Mk VIII Braced Autogun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Antax_mk_v_icon.webp" alt="missing image">
+                <p>Antax Mk V Combat Axe</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Artemia_mk_iii_icon.webp" alt="missing image">
+                <p>Artemia Mk III Purgation Flamer</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Atrox_mk_ii_tactical_icon.webp" alt="missing image">
+                <p>Atrox Mk II Tactical Axe</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Atrox_mk_iv_tactical_icon.webp" alt="missing image">
+                <p>Atrox Mk IV Tactical Axe</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Atrox_mk_vii_tactical_icon.webp" alt="missing image">
+                <p>Atrox Mk VII Tactical Axe</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Blastoom_grenadier_gauntlet_icon.webp" alt="missing image">
+                <p>Blastoom Mk III Grenadier Gauntlet</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Brute_brainer_icon.webp" alt="missing image">
+                <p>Brute-Brainer Mk III Latrine Shovel</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Bull_butcher_mk_iii_icon.webp" alt="missing image">
+                <p>Bull Butcher Mk III Cleaver</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Bully_club_icon.webp" alt="missing image">
+                <p>"Brunt Special" Mk I Bully Club</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Cadia_mk_iv_chainsword_icon.webp" alt="missing image">
+                <p>Cadia Mk IV Assault Chainsword</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Catachan_mk_i_sword_icon.webp" alt="missing image">
+                <p>Catachan Mk I "Devil's Claw" Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Catachan_mk_iii_icon.webp" alt="missing image">
+                <p>Catachan Mk III Combat Blade</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Catachan_mk_iv_sword_icon.webp" alt="missing image">
+                <p>Catachan Mk IV "Devil's Claw" Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Catachan_mk_vii_sword_icon.webp" alt="missing image">
+                <p>Catachan Mk VII "Devil's Claw" Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Columnus_mk_ii_braced_icon.webp" alt="missing image">
+                <p>Columnus Mk II Braced Autogun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Columnus_mk_v_infantry_icon.webp" alt="missing image">
+                <p>Columnus Mk V Infantry Autogun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Crucis_mk_ii_icon.webp" alt="missing image">
+                <p>Crucis Mk II Thunder Hammer</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Deimos_mk_iv_force_sword_icon.webp" alt="missing image">
+                <p>Deimos Mk IV Blaze Force Sword</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Equinox_mk_iii_trauma_icon.webp" alt="missing image">
+                <p>Equinox Mk III Trauma Force Staff</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Equinox_mk_iv_voidstrike_icon.webp" alt="missing image">
+                <p>Equinox Mk IV Voidstrike Force Staff</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Foe_rend_mk_ii_icon.webp" alt="missing image">
+                <p>Foe-Rend Mk II Ripper Gun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Foe_rend_mk_vi_icon.webp" alt="missing image">
+                <p>Foe-Rend Mk VI Ripper Gun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Gorgonum_mk_iv_stubber_icon.webp" alt="missing image">
+                <p>Gorgonum Mk IV Twin-Linked Heavy Stubber</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Graia_mk_iv_braced_icon.webp" alt="missing image">
+                <p>Graia Mk IV Braced Autogun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Graia_mk_viii_infantry_icon.webp" alt="missing image">
+                <p>Graia Mk VIII Infantry Autogun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Illisi_mk_v_force_sword_icon.webp" alt="missing image">
+                <p>Illisi Mk V Blaze Force Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Indignatus_mk_ive_icon.webp" alt="missing image">
+                <p>Indignatus Mk IVe Crusher</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Ironhelm_mk_iv_thunder_hammer_icon.webp" alt="missing image">
+                <p>Ironhelm Mk IV Thunder Hammer</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Ius_mk_iii_icon.webp" alt="missing image">
+                <p>Ius Mk III Shredder Autopistol</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Kantrael_mg_ia_icon.webp" alt="missing image">
+                <p>Kantrael MG Ia Infantry Lasgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Kantrael_mg_iv_icon.webp" alt="missing image">
+                <p>Kantrael MG IV Infantry Lasgun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Kantrael_mg_xii_infantry_icon.webp" alt="missing image">
+                <p>Kantrael MG XII Infantry Lasgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Kantrael_mk_ix_shotgun_icon.webp" alt="missing image">
+                <p>Kantrael Mk IX Combat Shotgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Krourk_heavy_stubber_icon.webp" alt="missing image">
+                <p>Krourk Mk V Twin-Linked Heavy Stubber</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Krourk_mk_iv_icon.webp" alt="missing image">
+                <p>Krourk Mk IV Cleaver</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Krourk_mk_vi_icon.webp" alt="missing image">
+                <p>Krourk Mk VI Cleaver</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Lawbringer_mk_vi_shotgun_icon.webp" alt="missing image">
+                <p>Lawbringer Mk VI Combat Shotgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Locke_mk_iib_boltgun_icon.webp" alt="missing image">
+                <p>Locke Mk IIb Spearhead Boltgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Lorenz_kickback_icon.webp" alt="missing image">
+                <p>Lorenz Mk V Kickback</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Lorenz_rumbler_icon.webp" alt="missing image">
+                <p>Lorenz Mk VI Rumbler</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Lucius_mk_i_icon.webp" alt="missing image">
+                <p>Lucius Mk I Helbore Lasgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Lucius_mk_ii_icon.webp" alt="missing image">
+                <p>Lucius Mk II Helbore Lasgun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Lucius_mk_iii_icon.webp" alt="missing image">
+                <p>Lucius Mk III Helbore Lasgun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/M35_magnacore_mk_ii_icon.webp" alt="missing image">
+                <p>M35 Magnacore Mk II Plasma Gun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Maccabian_mk_ii_icon.webp" alt="missing image">
+                <p>Maccabian Mk II Duelling Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Maccabian_mk_iv_icon.webp" alt="missing image">
+                <p>Maccabian Mk IV Duelling Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Maccabian_mk_v_icon.webp" alt="missing image">
+                <p>Maccabian Mk V Duelling Sword</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Mk_ii_pride_bully_club_icon.webp" alt="missing image">
+                <p>"Brunt's Pride" Mk II Bully Club</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Mk_iiib_basher_bully_club_icon.webp" alt="missing image">
+                <p>"Brunt's Basher" Mk IIIb Bully Club</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Munitorum_mk_iii_power_sword_icon.webp" alt="missing image">
+                <p>Munitorum Mk III Power Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Munitorum_mk_vi_power_sword_icon.webp" alt="missing image">
+                <p>Munitorum Mk VI Power Sword</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Nomanus_mk_vi_surge_icon.webp" alt="missing image">
+                <p>Nomanus Mk VI Surge Force Staff</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Obscurus_mk_ii_icon.webp" alt="missing image">
+                <p>Obscurus Mk II Blaze Force Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Orestes_mk_iv_chainaxe_icon.webp" alt="missing image">
+                <p>Orestes Mk IV Assault Chainaxe</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Orox_maul_and_slab_shield_icon.webp" alt="missing image">
+                <p>Orox Mk II Battle Maul & Mk III Slab Shield</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Rashad_mk_ii_icon.webp" alt="missing image">
+                <p>Rashad Mk II Combat Axe</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Rifthaven_mk_ii_purgatus_icon.webp" alt="missing image">
+                <p>Rifthaven Mk II Purgatus Force Staff</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Standard-issue_shovel_icon.webp" alt="missing image">
+                <p>Standard-issue Munitorum Sapper Shovel</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Tigrus_mk_ii_icon.webp" alt="missing image">
+                <p>Tigrus Mk II Heavy Eviscerator</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Turtolsky_mk_ix_icon.webp" alt="missing image">
+                <p>Turtolsky Mk IX Heavy Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Turtolsky_mk_vi_icon.webp" alt="missing image">
+                <p>Turtolsky Mk VI Heavy Sword</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Turtolsky_mk_vii_icon.webp" alt="missing image">
+                <p>Turtolsky Mk VII Heavy Sword</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Vraks_mk_iii_headhunter_icon.webp" alt="missing image">
+                <p>Vraks Mk III Headhunter Autogun</p>
+            </div>
+            <div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Vraks_mk_vii_headhunter_icon.webp" alt="missing image">
+                <p>Vraks Mk VII Headhunter Autogun</p>
+            </div>
+			<div class="block" onclick="enlargeBlock(this)">
+                <img src="guns/Zarona_mk_iia_revolver_icon.webp" alt="missing image">
+                <p>Zarona MK IIa Quickdraw Stub Revolver</p>
+            </div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    
+    <script>
+		function enlargeBlock(block) {
+			block.classList.add('enlarged');
+			var overlay = document.getElementById('overlay');
+			overlay.style.display = 'block';
+
+			var randomNumber = Math.floor(Math.random() * (81 - 20 + 1)) * 100 + 2000;
+			var p = document.createElement("p");
+			p.id = "randomNumber";
+			p.innerText = "The cost of the currently available: " + randomNumber;
+
+			var button = document.createElement("button");
+			button.innerHTML = "Place Order";
+			button.onclick = function() {
+				showOrderMessage(block, p, button);
+			};
+
+			block.appendChild(p);
+			block.appendChild(button);
+		}
+
+		function showOrderMessage(block, p, button) {
+			var years = Math.floor(Math.random() * (600 - 100 + 1)) + 100;
+			alert("Your order will arrive from the nearest forge world in the next " + years + " years. Payment will be made upon arrival.");
+
+			block.classList.remove('enlarged');
+			var overlay = document.getElementById('overlay');
+			overlay.style.display = 'none';
+
+			block.removeChild(p);
+			block.removeChild(button);
+		}
+
+		document.getElementById('overlay').onclick = function() {
+			var enlargedBlock = document.querySelector('.enlarged');
+			var p = enlargedBlock.querySelector("#randomNumber");
+			var button = enlargedBlock.querySelector("button");
+
+			enlargedBlock.classList.remove('enlarged');
+			this.style.display = 'none';
+
+			enlargedBlock.removeChild(p);
+			enlargedBlock.removeChild(button);
+		};
+    </script>
+</body>
+</html>

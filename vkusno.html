@@ -1,0 +1,152 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vkusny design</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('background3.png') center center fixed;
+            background-size: cover;
+            overflow-y: scroll;
+			color: white;
+        }
+        header {
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        header a:hover {
+            background-color: #666;
+        }
+        .content {
+            padding: 0 10%;
+			min-height: 100vh;
+            text-align: center;
+        }
+        .main-content {
+            background-color: rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+	</style>
+</head>
+<body>
+    <header>
+        <h1>Atoma Prime purging statistics</h1>
+        <a href="index.html">Imperium Holy Vox Store</a>
+        <a href="vkusno.html">Atoma Prime purging statistics</a>
+        <a href="povkusuvkusno.html">Operative Page</a>
+    </header>
+	<div class="content">
+		<div class="main-content">
+			<canvas id="myChart1"></canvas>
+			<canvas id="myChart2"></canvas>
+		</div>
+	</div>
+	<script>
+		var ctx = document.getElementById('myChart1').getContext('2d');
+		var randomData = Array.from({ length: 12 }, () => Math.floor(Math.random() * 1000000000));
+		var data = {
+			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			datasets: [{
+				label: 'Heretics Killed',
+				data: randomData,
+				backgroundColor: 'rgba(21, 152, 52, 0.5)',
+				borderColor: 'rgba(0, 255, 0, 1)',
+				borderWidth: 1
+			}]
+		};
+
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: data,
+			options: {
+				scales: {
+					x: {
+						ticks: {
+							color: 'white'
+						}
+					},
+					y: {
+						ticks: {
+							color: 'white'
+						}
+					}
+				},
+				plugins: {
+					legend: {
+						labels: {
+							color: 'white'
+						}
+					}
+				}
+			}
+		});
+		
+		var ctx = document.getElementById('myChart2').getContext('2d');
+		var randomData = Array.from({ length: 4 }, () => Math.floor(Math.random() * 100) + 1);
+		var data = {
+			labels: ['Zealot: Preacher', 'Psyker: Psykinetic', 'Ogryn: Skullbreaker', 'Veteran: Sharpshooter'],
+			datasets: [{
+				label: 'Operative efficiency',
+				data: randomData,
+				backgroundColor: 'rgba(21, 152, 52, 0.5)',
+				borderColor: 'rgba(0, 255, 0, 1)',
+				borderWidth: 1
+			}]
+		};
+
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				scales: {
+					x: {
+						ticks: {
+							color: 'white'
+						}
+					},
+					y: {
+						ticks: {
+							color: 'white'
+						}
+					}
+				},
+				plugins: {
+					datalabels: {
+						display: true,
+						color: 'black'
+					},
+					legend: {
+						labels: {
+							color: 'white'
+						}
+					}
+				}
+			}
+		});
+    </script>
+	</body>
+</html>
