@@ -93,15 +93,16 @@
 				</select><br><br>
 
 				<label for="birthplace-city">Hive sity:</label>
-				<input type="text" id="birthplace-city" name="birthplace-city" required>
+				<input type="text" id="hive-city" name="hive-city" required>
 				
-				<label for="birthplace-country">Planet:</label>
-				<input type="text" id="birthplace-country" name="birthplace-country" required><br><br>
+				<label for="planet">Planet:</label>
+				<input type="text" id="planet" name="planet" required><br><br>
 
 				<label for="occupation">Type of activity:</label><br>
 				<textarea id="occupation" name="occupation" rows="4" cols="100" required></textarea><br><br>
 
 				<button type="button" onclick="submitForm()">Submit</button>
+				<button type="button" onclick="saveTextToFile()">Download Vox File</button>
 			</form>
 		</div>
 	</div>
@@ -111,19 +112,38 @@
             var lastName = document.getElementById('last-name').value;
             var age = document.getElementById('age').value;
             var gender = document.getElementsByName('gender')[0].value;
-            var birthplaceCity = document.getElementById('birthplace-city').value;
-            var birthplaceCountry = document.getElementById('birthplace-country').value;
+            var hiveCity = document.getElementById('hive-city').value;
+            var planet = document.getElementById('planet').value;
             var occupation = document.getElementById('occupation').value;
 
             var message1 = "Name: " + firstName + "\n" +
                           "Last Name: " + lastName + "\n" +
                           "Age: " + age + "\n" +
                           "Gender: " + gender + "\n" +
-                          "Hive sity: " + birthplaceCity + "\n" +
-                          "Planet: " + birthplaceCountry + "\n" +
+                          "Hive sity: " + hiveCity + "\n" +
+                          "Planet: " + planet + "\n" +
                           "Type of activity: " + occupation;
-			var message2 = "Congratulations! You are officially enrolled in the ranks of Astra Millitarum, go to the nearest reception point for admission to the regiment.";
             alert(message1);
+        }
+        function saveTextToFile() {
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementsByName('gender')[0].value;
+            const hiveCity = document.getElementById('hive-city').value;
+            const planet = document.getElementById('planet').value;
+            const occupation = document.getElementById('occupation').value;
+			const text = `INFORMATION LIST\nNAME: ${firstName}\nLAST_NAME: ${lastName}\nAGE: ${age}\nGENDER: ${gender}\nHIVE_CITY: ${hiveCity}\nPLANET: ${planet}\nACTIVITY: ${occupation}`;
+			const blob = new Blob([text], { type: 'text/plain' });
+			const url = URL.createObjectURL(blob);
+			const a = document.createElement('a');
+			a.href = url;
+			a.download = 'MillitarumRecruit.txt';
+			document.body.appendChild(a);
+			a.click();
+			URL.revokeObjectURL(url);
+			document.body.removeChild(a);
+			var message2 = "Congratulations! You are officially enrolled in the ranks of Astra Millitarum, request a document print from the nearest servitor and go to the nearest reception point for admission to the regiment.";
 			alert(message2);
         }
     </script>
